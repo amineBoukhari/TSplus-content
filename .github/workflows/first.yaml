@@ -1,27 +1,30 @@
-name : First workflow 
+name: Push to Repo A
 
-on :
-    push : 
-          branches :  
-                    - main 
-    pull_request :
-          branches :  
-                    - main 
-    workflow_dispatch:
+on:
+  push:
+    paths:
+      - '/content' # Specify the path to the content folder
 
-jobs : 
-      hello :
-            runs-on : ubuntu-latest
-            steps :
-                  - uses : actions/checkout@v2
-                  - name : Hello World 
-                    run : echo "hello world"
-                    shell : bash 
+jobs:
+  push-to-repo-a:
+    runs-on: ubuntu-latest
 
+    steps:
+    - name: Checkout Repo A
+      uses: actions/checkout@v2
+      with:
+        repository: amineBoukhari/TSplus_code # Replace with your Repo A username and repository name
+        token: ${{ secrets.RepoCode }}
+        path: TSplus-content
 
-      goodbaye :  
-             runs-on : ubuntu-latest
-             steps :
-                  - name : goodbaye World 
-                    run : echo "goodbaye world"
-                    shell : bash 
+    - name: Copy Content to Repo A
+      run: cp -r content/ TSplus-content/content/
+
+    - name: Commit and Push to Repo A
+      run: |
+        cd TSplus-content 
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git add -A
+        git commit -m "Update content folder"
+        git push
