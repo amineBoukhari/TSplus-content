@@ -23,3 +23,6 @@ jobs:
             echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_rsa
             git clone git@github.com:amineBoukhari/TSplus_code.git
             git pull 
+            git add .
+            git commit -m "commit from content"
+            git push 
