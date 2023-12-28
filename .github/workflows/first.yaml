@@ -23,8 +23,8 @@ jobs:
           SSH_DEPLOY_KEY: SHA256:FCphcv8zn9/qvAHMuYZz87pqZ9TbXu6TBqYAwbg4sRE
         with:
           source-directory: output/
-          destination-github-username: 'pllee4-Experimental'
-          destination-repository-name: 'mock-medium-output'
+          destination-github-username: 'amineBoukhari'
+          destination-repository-name: 'TSplus_code'
           user-email: amineboukhari20@gmail.com
           commit-message: pushed from $GITHUB_REF
           target-branch: master
