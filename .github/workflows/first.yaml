@@ -17,7 +17,7 @@ jobs:
          
     - name: Commit and Push  to Code repo
       run: |
-        cd repo-a
+        cd TSplus_code
         git config user.email "actions@github.com"
         git config user.name "GitHub Actions"
         git add -A
