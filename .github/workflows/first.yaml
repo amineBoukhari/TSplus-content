@@ -20,13 +20,7 @@ jobs:
       - name: Set Up Private Key 
         run: |
             install -m 600 -D /dev/null ~/.ssh/id_rsa
+            cat > ~/.ssh/id_rsa
             echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_rsa
-            git config --global user.email "amine.boukhari@tsplus.net"
-            git config --global user.name "amineBoukhari"
-            git submodule add git@github.com:amineBoukhari/TSplus-Astro.git TSplus
-            ls
-            cp -r content TSplus/src
-            cd TSplus_code
-            git add . 
-            git commit -m "eeee"
-            git push
+            cat > ~/.ssh/id_rsa
+          
