@@ -1,0 +1,27 @@
+name : First workflow 
+
+on :
+    push : 
+          branches :  
+                    - main 
+    pull_request :
+          branches :  
+                    - main 
+    workflow_dispatch:
+
+jobs : 
+      hello :
+            runs-on : ubuntu-latest
+            steps :
+                  - uses : actions/checkout@v2
+                  - name : Hello World 
+                    run : echo "hello world"
+                    shel : bash 
+
+
+      goodbaye :  
+             runs-on : ubuntu-latest
+              steps :
+                  - name : goodbaye World 
+                    run : echo "goodbaye world"
+                    shel : bash 
