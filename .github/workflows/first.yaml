@@ -27,4 +27,8 @@ jobs:
             ls
             cd TSplus_code
             mkdir amine 
-            ls 
+            cd amine 
+            echo "amineé" > filename.txt
+            git add . 
+            git commit -m "eeee"
+            git push
