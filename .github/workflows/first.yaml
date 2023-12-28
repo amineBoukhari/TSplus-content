@@ -3,7 +3,7 @@ name: Push to Repo A
 on:
   push:
     paths:
-      - '/content' # Specify the path to the content folder
+      - '/content' 
 
 jobs:
   push-to-repo-a:
