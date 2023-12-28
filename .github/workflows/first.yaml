@@ -1,28 +1,30 @@
-name: Push to Code repo
+name: Publish to Medium
 
-on:
+"on":
   push:
+    branches:
+      - main
     #paths:
-     # - '/content' 
+      #- 'posts/**'
 
 jobs:
-  push-to-repo-code:
+  post:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Copy Content  to Code repo
-      run: |
-         cp -r content TSplus_code/
-         
-    - uses: actions/checkout@v2     
-    - name: Commit and Push  to Code repo
-      run: |
-        cd TSplus_code
-        git config user.email "actions@github.com"
-        git config user.name "GitHub Actions"
-        git add -A
-        git commit -m "Update content folder"
-        git push
-         
-         
+      - uses: actions/checkout@v2
+      - name: Creates output folder and remove markdown
+        run:  |
+              mkdir output
+              cp -r content output
+      - name: Pushes to public repository
+        id: push_directory
+        uses: cpina/github-action-push-to-another-repository@ssh-deploy-key
+        env:
+          SSH_DEPLOY_KEY: SHA256:FCphcv8zn9/qvAHMuYZz87pqZ9TbXu6TBqYAwbg4sRE
+        with:
+          source-directory: output/
+          destination-github-username: 'pllee4-Experimental'
+          destination-repository-name: 'mock-medium-output'
+          user-email: amineboukhari20@gmail.com
+          commit-message: pushed from $GITHUB_REF
+          target-branch: master
