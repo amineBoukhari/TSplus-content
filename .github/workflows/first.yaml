@@ -21,7 +21,7 @@ jobs :
 
       goodbaye :  
              runs-on : ubuntu-latest
-              steps :
+             steps :
                   - name : goodbaye World 
                     run : echo "goodbaye world"
                     shel : bash 
