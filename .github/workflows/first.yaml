@@ -20,12 +20,12 @@ jobs:
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@ssh-deploy-key
         env:
-          SSH_DEPLOY_KEY: SHA256:AqK/gevP+mlY50nLGcwzSyZH6ydtkDPxls0AB8D70y8 
+          SSH_DEPLOY_KEY: SHA256:Q1gtkgOPVAbCFPfODS5ar97axsBqjaQsCodIgXq3roM
 
         with:
           source-directory: output/
           destination-github-username: 'amineBoukhari'
           destination-repository-name: 'TSplus_code'
-          user-email: amineboukhari20@gmail.com
+          user-email: amine.boukhari@tsplus.net
           commit-message: pushed from $GITHUB_REF
           target-branch: main
