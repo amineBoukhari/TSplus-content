@@ -2,8 +2,8 @@ name: Push to Repo A
 
 on:
   push:
-    paths:
-      - '/content' 
+    #paths:
+     # - '/content' 
 
 jobs:
   push-to-repo-a:
