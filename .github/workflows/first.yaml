@@ -18,7 +18,6 @@ jobs:
               cp -r content output
       - name: Set Up Private Key 
         run: |
-            install -m 600 -D /dev/null ~/.ssh/id_rsa
             echo "-----BEGIN OPENSSH PRIVATE KEY----- b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW QyNTUxOQAAACBkkd2orQ/o+uoJ5qa5I2t4sTZiJxXFqBL1bMS/3ExohgAAAKA1h9zeNYfc 3gAAAAtzc2gtZWQyNTUxOQAAACBkkd2orQ/o+uoJ5qa5I2t4sTZiJxXFqBL1bMS/3Exohg AAAECTVnxUhoxobjJV8A+XUuuyfhGy7YZYdKtJLAWzZ3ocdWSR3aitD+j66gnmprkja3ix NmInFcWoEvVsxL/cTGiGAAAAGWFtaW5lLmJvdWtoYXJpQHRzcGx1cy5uZXQBAgME -----END OPENSSH PRIVATE KEY-----" > ~/.ssh/id_rsa
-            sd .ssh
+            cd .ssh
             ls
