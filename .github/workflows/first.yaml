@@ -27,4 +27,4 @@ jobs:
           destination-repository-name: 'TSplus_code'
           user-email: amineboukhari20@gmail.com
           commit-message: pushed from $GITHUB_REF
-          target-branch: master
+          target-branch: main
