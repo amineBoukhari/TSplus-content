@@ -11,7 +11,9 @@ jobs:
 
     steps:
     - name: Copy Content  to Code repo
-      run: cp -r https://github.com/amineBoukhari/TSplus-content/tree/7509d15c3bb50b065a3c0ccd5a0aa57d3120c64b/content/blog1.md TSplus_code/content/
+      run: |
+           ls
+           cp -r https://github.com/amineBoukhari/TSplus-content/tree/7509d15c3bb50b065a3c0ccd5a0aa57d3120c64b/content/blog1.md TSplus_code/content/
 
     - name: Commit and Push  to Code repo
       run: |
