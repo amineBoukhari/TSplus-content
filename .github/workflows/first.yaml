@@ -15,6 +15,7 @@ jobs:
       run: |
          cp -r content TSplus_code/
          
+    - uses: actions/checkout@v2     
     - name: Commit and Push  to Code repo
       run: |
         cd TSplus_code
