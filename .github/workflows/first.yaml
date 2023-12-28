@@ -1,4 +1,4 @@
-name: Push to Repo A
+name: Push to Code repo
 
 on:
   push:
@@ -10,19 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repo A
-      uses: actions/checkout@v2
-      with:
-        repository: amineBoukhari/TSplus_code # Replace with your Repo A username and repository name
-        token: ${{ secrets.RepoCode }}
-        path: TSplus-content
+    - name: Copy Content  to Code repo
+      run: cp -r content/ repo-a/content/
 
-    - name: Copy Content to Repo A
-      run: cp -r content/ TSplus-content/content/
-
-    - name: Commit and Push to Repo A
+    - name: Commit and Push  to Code repo
       run: |
-        cd TSplus-content 
+        cd repo-a
         git config user.email "actions@github.com"
         git config user.name "GitHub Actions"
         git add -A
