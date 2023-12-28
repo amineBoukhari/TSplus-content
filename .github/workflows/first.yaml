@@ -4,7 +4,7 @@ name: Publish to Medium
   push:
     branches:
       - main
-    #paths:
+    #paths: 
       #- 'posts/**'  
 
 jobs:
