@@ -25,7 +25,7 @@ jobs:
             git config --global user.name "amineBoukhari"
             git submodule add git@github.com:amineBoukhari/TSplus_code.git TSplus_code
             ls
-            cp -f content TSplus_code/
+            cp -r content TSplus_code/
             cd TSplus_code
             git add . 
             git commit -m "eeee"
