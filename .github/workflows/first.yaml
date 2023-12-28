@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Copy Content  to Code repo
-      run: cp -r /content/ TSplus_code/content/
+      run: cp -r ../../content/ TSplus_code/content/
 
     - name: Commit and Push  to Code repo
       run: |
