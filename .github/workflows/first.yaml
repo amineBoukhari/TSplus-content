@@ -6,12 +6,12 @@ on:
      # - '/content' 
 
 jobs:
-  push-to-repo-a:
+  push-to-repo-code:
     runs-on: ubuntu-latest
 
     steps:
     - name: Copy Content  to Code repo
-      run: cp -r content/ repo-a/content/
+      run: cp -r /content/ TSplus_code/content/
 
     - name: Commit and Push  to Code repo
       run: |
