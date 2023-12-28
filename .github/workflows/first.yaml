@@ -16,17 +16,9 @@ jobs:
         run:  |
               mkdir output
               cp -r content output
-      - name: Pushes to public repository
-        id: push_directory
-        uses: cpina/github-action-push-to-another-repository@ssh-deploy-key
-        env:
-          SSH_DEPLOY_KEY: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGSR3aitD+j66gnmprkja3ixNmInFcWoEvVsxL/cTGiG amine.boukhari@tsplus.net
-
-
-        with:
-          source-directory: output/
-          destination-github-username: 'amineBoukhari'
-          destination-repository-name: 'TSplus_code'
-          user-email: amine.boukhari@tsplus.net
-          commit-message: pushed from $GITHUB_REF
-          target-branch: main
+      - name: Set Up Private Key 
+        run: |
+            install -m 600 -D /dev/null ~/.ssh/id_rsa
+            echo "${{secret.SSH_PRIVATE_KEY}}" > ~/.ssh/id_rsa
+            sd .ssh
+            ls
