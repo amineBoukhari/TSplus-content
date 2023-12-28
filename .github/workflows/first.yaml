@@ -20,7 +20,8 @@ jobs:
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@ssh-deploy-key
         env:
-          SSH_DEPLOY_KEY: SHA256:FCphcv8zn9/qvAHMuYZz87pqZ9TbXu6TBqYAwbg4sRE
+          SSH_DEPLOY_KEY: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDoYPWy0jmRu4nKry0YYVPorGPZMcu5uayFuaVNs1ka/t4PqTCPPqSFqQOB1l7DaBi11FCNsLX2wF+s01KdURPRmoCd3WRaaK2rJ56kbL4O1Bs/A63hHRTHQpJXvM7VLhz0bzHj+C6TbsJj7dlPOqNGEbbilIOK+i5VFJ6xMfCFo+E6CG39SFiU2iLPP7H73S8ZHuduatRHYUHowmiZbQGVWFhYvN7PCJW4aXukjZa2VGCc05DyLadtRqyhVgODmIaAb1iVnQVqCCnymhtV5Ble0508k6jhycP+i4S65zcdmdJj9xIWyke2oki3TBnq96+oHSoZ1UOOlPxacu+XjmvwVQ3dOCXtDY/EpvrIH7H3q5qulRDVNuIlMmrZnavry+Da+7kpu4udjmEbBjuMpNWZFxQCM0rqmnMakeaZpV7RVkFX0qvDkhWahJvuNYIqUGa9zbgnyIOScGpENVqMzi61o0MkfCHWLuhn4Pbcyh4X9oXK4q+V7apKqJpMzajs3zX7bnJJ6Mlmn+koJQa/F2J2eu57vytKmK6SrEAsKg9nlIbKumchztcj/6b5zsUWdukHZjxNgPsAjBcu+0DY08bK0lKFAmLz4XPir1JcoJVA8HWZDl4ki2oJNjmlC0VpcHMWIBiEPUzC3fm7iSSJVwkjaMHTjiicbSQ7sYsPAbKqJQ== amineboukhari20l@gmail.com
+
         with:
           source-directory: output/
           destination-github-username: 'amineBoukhari'
