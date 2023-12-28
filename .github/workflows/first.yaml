@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Copy Content  to Code repo
       run: |
-         cp -r content TSplus_code/content/
+         cp -r content TSplus_code/
          
     - name: Commit and Push  to Code repo
       run: |
