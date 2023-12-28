@@ -24,7 +24,7 @@ jobs:
             git config --global user.email "amine.boukhari@tsplus.net"
             git config --global user.name "amineBoukhari"
             git submodule add git@github.com:amineBoukhari/TSplus-Astro.git TSplus_Astro
-            cp -r content TSplus_Astro/src
+            cp  test TSplus_Astro/src
             cd TSplus_Astro
             git add . 
             git commit -m "eeee"
