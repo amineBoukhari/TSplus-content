@@ -20,7 +20,8 @@ jobs:
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@ssh-deploy-key
         env:
-          SSH_DEPLOY_KEY: SHA256:Q1gtkgOPVAbCFPfODS5ar97axsBqjaQsCodIgXq3roM
+          SSH_DEPLOY_KEY: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGSR3aitD+j66gnmprkja3ixNmInFcWoEvVsxL/cTGiG amine.boukhari@tsplus.net
+
 
         with:
           source-directory: output/
