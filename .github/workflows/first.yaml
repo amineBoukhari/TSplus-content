@@ -23,7 +23,7 @@ jobs:
             echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_rsa
             git config --global user.email "amine.boukhari@tsplus.net"
             git config --global user.name "amineBoukhari"
-            git submodule add git@github.com:amineBoukhari/TSplus-Astro.git TSplus
+            git submodule add git@github.com:amineBoukhari/TSplus-Astro.git TSplus_Astro
             cp -r content TSplus/src
             cd TSplus
             git add . 
