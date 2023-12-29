@@ -12,11 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Creates output folder and remove markdown
-        run:  |
-              mkdir output
-              cp -r content output
-      - uses: actions/checkout@v2
       - name: Set Up Private Key 
         run: |
             install -m 600 -D /dev/null ~/.ssh/id_rsa
