@@ -21,7 +21,7 @@ Indeed, remote access software stands increasingly as a fundamental pillar the d
 Of all technology, remote access software therefore needs to be carefully chosen, according to a variety of criteria. With that goal in mind, let us discuss some of the best remote access software and weigh up their principal advantages and disadvantages.
 
 
-## Why Remote Access Software?
+## Why Remote Access Software? 
 
 
 Whether you are a tech support specialist, an IT professional, an IT administrator in an SMB or enterprise, or a remote worker, the power of remote access software is undeniable. It allows you to remotely access applications, files and systems, and to remotely control them, all as though you were physically present. It gives legacy software a new lease of life and grants thin-client and light devices the power and speed of your top of the range servers to run heavy applications. No wonder it a vital tool for streamlining operations and enhancing productivity.
