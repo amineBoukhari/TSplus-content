@@ -15,7 +15,7 @@ imageLink: Purple-and-White-Illustrated-Social-Media-Blog-Banner-1024x576.png
 **Awards keep raining down on TSplus, the software developer for Remote Access solutions. The last quarter of 2022 has been marked by press articles, rewards and others forms of acknowledgements of the excellence of TSplus products, affirming its potential as a leader in the market.**
 
 
-## TSplus Has All the Ingredients to be a Leader in Remote Access
+## TSplus Has All the Ingredients to be a Leader in Remote Access.
 
 
 This quarter, TSplus was rewarded more than once for its performance, its high customer satisfaction, and its ambitious innovation mindset. Starting with SourceForge, the world's largest software comparison directory featuring user reviews, product comparisons, software guides, and more. **The platform recognized TSplus in October as a**[**Top Performer Remote Desktop software**](https://tsplus.net/remote-access-keeps-its-position-as-sourceforge-top-performer-software-in-remote-desktop-category/)**, before upgrading the company to the status of Leader in this category.**
