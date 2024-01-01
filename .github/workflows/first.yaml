@@ -7,6 +7,11 @@ name: Publish to Medium
     paths: 
       - 'blog/**'
       - 'assets/**'
+      - 'Remote_Access/**'
+      - 'Remote_Support/**'
+      - 'Server_Monitoring/**'
+      - 'Advanced_Security/**'
+      
 
 jobs:
   post:
@@ -17,9 +22,15 @@ jobs:
         run: |
             install -m 600 -D /dev/null ~/.ssh/id_rsa
             echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_rsa
+      - name: Set Up Users info
+        run: |
             git config --global user.email "amine.boukhari@tsplus.net"
             git config --global user.name "amineBoukhari"
+      - name: clone the main repo
+        run: |     
             git submodule add git@github.com:jwts-dev/tsplus-net.git TSplus_Astro
+      - name: push modifications
+        run: |       
             cp -r blog/* TSplus_Astro/src/content/blog
             cp assets/* TSplus_Astro/public/images
             cp Remote_Access/* TSplus_Astro/src/content/Remote_Access
