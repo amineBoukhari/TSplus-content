@@ -22,6 +22,11 @@ jobs:
             git submodule add git@github.com:jwts-dev/tsplus-net.git TSplus_Astro
             cp -r blog/* TSplus_Astro/src/content/blog
             cp assets/* TSplus_Astro/public/images
+            cp Remote_Access/* TSplus_Astro/src/content/Remote_Access
+            cp Remote_Support/* TSplus_Astro/src/content/Remote_Support
+            cp Server_Monitoring/* TSplus_Astro/src/content/Server_Monitoring
+            cp Advanced_Security/* TSplus_Astro/src/content/Advanced_Security
+            
             cd TSplus_Astro
             
             if [[ -n $(git status -s) ]]; then
