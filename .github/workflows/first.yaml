@@ -26,9 +26,7 @@ jobs:
         run: |
             git config --global user.email "amine.boukhari@tsplus.net"
             git config --global user.name "amineBoukhari"
-      - name: clone the main repo
-        run: |     
-            git submodule add git@github.com:jwts-dev/tsplus-net.git TSplus_Astro
+    
       - name: push modifications
         run: |       
             cp -r blog/* TSplus_Astro/src/content/blog
