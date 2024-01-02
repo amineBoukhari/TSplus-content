@@ -14,6 +14,7 @@ imageLink: Alternative-to-Zoho-Assist-1024x576.png
 [![Article title "Alternative to Zoho Assist", logo and link against background picture of computer devices](/images/Alternative-to-Zoho-Assist-1024x576.png)](https://tsplus.net/remote-support/) 
 
 Zoho Assist is one of the common names that comes up when shopping for a remote assistance and screen sharing solution. **Easy remote access, as well as smooth file-sharing are some of the features behind Zoho Assist's appeal.** 
+![1](https://github.com/amineBoukhari/TSplus-content/assets/146739783/b27ce38e-ebbb-4e80-b5f1-408f4c96e3ae)
 
 However, depending upon the requirements of your company, Zoho Assist may not be the most effective match for you. Thankfully, there are many choices, just as viable, on the marketplace today.
 
