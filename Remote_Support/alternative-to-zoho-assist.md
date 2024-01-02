@@ -26,6 +26,7 @@ Of the many readily available alternatives to Zoho Assist, TSplus Remote Support
 
 With no end-user installation required, software and security updates are never a problem. This makes it useful for companies with small IT teams, as it is one less part of their IT infrastructure to manage.
 
+![1](https://github.com/amineBoukhari/TSplus-content/assets/146739783/19a5bb6c-4d8b-4dca-95f2-e19dafa624e7)
 
 ## Scalable Alternative to Zoho Assist
 
