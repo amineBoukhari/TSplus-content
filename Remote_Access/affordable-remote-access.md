@@ -14,6 +14,7 @@ imageLink: Affordable-Remote-Access-1024x576.png
 [![Article title, TSplus logo and link, illustrated by image of networked computer devices.](/images/Affordable-Remote-Access-1024x576.png)](https://tsplus.net/remote-access/) 
 **Simple - Affordable - Efficient - Secure**
 
+![1](https://github.com/amineBoukhari/TSplus-content/assets/146739783/8b80649c-0891-435f-ad9d-f792783b166a)
 
 Remote Access from 32$ per user. For life.
 
