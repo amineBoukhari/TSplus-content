@@ -5,7 +5,8 @@ article-ID: 25233
 last-modification-date: 2022-11-18 23:23:22
 draft: False
 tags: 
-categories: Server Monitoring
+categories: Server Monitoring![7-1024x307](https://github.com/amineBoukhari/TSplus-content/assets/146739783/7132b43c-5d78-4b5b-a06b-c2c22b157382)
+
 slug: an-array-of-tools-for-managed-hosting
 title: 'An Array of Tools for Managed Hosting '
 metaDescription: "Managed hosting may best be described as the premium version of Web hosting. What sorts of tools might MSPs use to manage servers and sites?"
