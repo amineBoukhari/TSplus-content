@@ -24,7 +24,7 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.GPT }}" \
             -d '{
                  "model": "gpt-3.5-turbo",
-                 "messages": [{"role": "user", "content": "translate this to French: '"$FILE_CONTENT"'"}],
+                 "messages": [{"role": "user", "content": "translate this to French: ""$FILE_CONTENT"""}],
                  "temperature": 0.7
                }'
 
