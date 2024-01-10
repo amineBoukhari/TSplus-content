@@ -17,13 +17,13 @@ jobs:
       run: |
           ls
           curl -X POST \
-          https://api.openai.com/v1/chat/completions \
-          -H "Content-Type: application/json" \
-          -H "Authorization: Bearer ${{ secrets.GPT }}" \
-          --data-binary @blogs/2023-cyberthreats-threads-the-advanced-security-response.md \
+          curl https://api.openai.com/v1/files \
+          -H "Authorization: Bearer YOUR_API_KEY" \
+          -F purpose="fine-tune" \
+          -F file='@blog/2023-cyberthreats-threads-the-advanced-security-response.md'
           -d '{
             "model": "gpt-3.5-turbo",
-            "messages": [{"role": "user", "content": ""}],
+            "messages": [{"role": "user", "content": "translate the given file to french"}],
             "temperature": 0.7
           }'
 
