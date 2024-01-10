@@ -20,7 +20,7 @@ jobs:
           curl https://api.openai.com/v1/chat/completions  \
           -H "Authorization: Bearer ${{secrets.GPT}}" \
           -F purpose="fine-tune" \
-          -F file='@blog/2023-cyberthreats-threads-the-advanced-security-response.md'
+          -F file= @blog/2023-cyberthreats-threads-the-advanced-security-response.md
           -d '{
             "model": "gpt-3.5-turbo",
             "messages": [{"role": "user", "content": "translate the given file to french"}],
