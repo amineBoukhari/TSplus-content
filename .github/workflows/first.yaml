@@ -17,7 +17,7 @@ jobs:
       run: |
           ls
           FILE_CONTENT=$(cat blogs/2023-cyberthreats-threads-the-advanced-security-response.md | sed 's/"/\\"/g')
-          echo FILE_CONTENT
+          echo $FILE_CONTENT
           curl -X POST \
             https://api.openai.com/v1/chat/completions \
             -H "Content-Type: application/json" \
