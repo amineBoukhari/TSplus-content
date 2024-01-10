@@ -1,3 +1,10 @@
+name: Continuous Translation
+
+"on":
+  push:
+    branches:
+      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -5,11 +12,8 @@ jobs:
     - uses: actions/checkout@v3
     - uses: yunwei37/OpenAI-Continuous-Translator@master
       with:
-          git_repo_url: https://github.com/amineBoukhari/TSplus-content.git
-          api_key: ${{ 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 }}
-          source_language: 'en' # Replace 'en' with your desired source language code
-          target_language: 'fh' # Replace 'zh' with your desired target language code
-          # Add other inputs as needed
+          git_repo_url: https://github.com/radi-cho/awesome-gpt4
+          api_key: ${{ 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}}
     - name: Add & Commit
       uses: EndBug/add-and-commit@v9.1.1
     - name: Create Pull Request
