@@ -18,7 +18,7 @@ jobs:
           ls
           curl -X POST \
           curl https://api.openai.com/v1/files \
-          -H "Authorization: Bearer YOUR_API_KEY" \
+          -H "Authorization: Bearer ${{secrets.GPT}}" \
           -F purpose="fine-tune" \
           -F file='@blog/2023-cyberthreats-threads-the-advanced-security-response.md'
           -d '{
