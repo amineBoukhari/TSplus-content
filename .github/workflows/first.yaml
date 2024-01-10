@@ -11,6 +11,7 @@ jobs:
 
     - name: Send message to GPT
       run: |
+        ls   
         curl -X POST \
         https://api.openai.com/v1/chat/completions \
         -H "Content-Type: application/json" \
