@@ -13,18 +13,6 @@ jobs:
       uses: actions/setup-node@v2
       with:
           node-version: '14' # Use the Node.js version compatible with your project
-
-    - name: Read file content
-      id: readfile
-      run: |
-        CONTENT = "::set-output name=content::$(node readFile.js blogs/2023-cyberthreats-threads-the-advanced-security-response.md)"
-
-    - name: Send content to ChatGPT
-      run: |
-       
-          echo "Sending the following content to ChatGPT:"
-          echo "$CONTENT"
-
     - name: Send message to GPT
       run: |
         ls   
@@ -34,7 +22,7 @@ jobs:
         -H "Authorization: Bearer ${{ secrets.GPT }}" \
         -d '{
              "model": "gpt-3.5-turbo",
-             "messages": [{"role": "user", "content": "translate this to french : $CONTENT "}],
+             "messages": [{"role": "user", "content": "translate this to french : "$(cat blogs/2023-cyberthreats-threads-the-advanced-security-response.md)" "}],
              "temperature": 0.7
            }'
       env:
