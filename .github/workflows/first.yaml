@@ -19,7 +19,7 @@ jobs:
           curl -X POST \
           https://api.openai.com/v1/chat/completions \
           -H "Content-Type: application/json" \
-          -H "Authorization: Bearer {{ secrets.GPT }}" \
+          -H "Authorization: Bearer ${{ secrets.GPT }}" \
           --data-binary @2023-cyberthreats-threads-the-advanced-security-response.md \
           -d '{
             "model": "gpt-3.5-turbo",
