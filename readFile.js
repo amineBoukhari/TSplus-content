@@ -1,25 +1,19 @@
 const fs = require('fs');
 const path = require('path');
 
-// Function to read file content
-function readFileContent(filePath) {
-    try {
-        // Read file content
-        const data = fs.readFileSync(filePath, 'utf8');
-        console.log(`File content of ${filePath}:`);
-        console.log(data);
-
-        // Here you can add more logic to process the file content
-        // For example, sending it to an API, processing the data, etc.
-
-    } catch (err) {
-        console.error(`Error reading file from disk: ${err}`);
-    }
+// Get file name from command line arguments
+const fileName = process.argv[2];
+if (!fileName) {
+    console.error("No file name provided!");
+    process.exit(1);
 }
 
-// Specify the path to your file
-// Replace 'your/file/path.txt' with the path to the file you want to read
-const filePath = path.join(__dirname, 'your/file/path.txt');
+const filePath = path.join(__dirname, fileName);
 
-// Read the file
-readFileContent(filePath);
+try {
+    const data = fs.readFileSync(filePath, 'utf8');
+    console.log(data); // Output the file content
+} catch (err) {
+    console.error(`Error reading file: ${err}`);
+    process.exit(1);
+}
