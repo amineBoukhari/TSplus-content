@@ -17,11 +17,11 @@ jobs:
     - name: Read file content
       id: readfile
       run: |
-        echo "::set-output name=content::$(node readFile.js blogs/2023-cyberthreats-threads-the-advanced-security-response.md)"
+        CONTENT = "::set-output name=content::$(node readFile.js blogs/2023-cyberthreats-threads-the-advanced-security-response.md)"
 
     - name: Send content to ChatGPT
       run: |
-          CONTENT="${{ steps.readfile.outputs.content }}"
+       
           echo "Sending the following content to ChatGPT:"
           echo "$CONTENT"
 
