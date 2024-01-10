@@ -1,50 +1,16 @@
-name: Publish to Medium
-
-"on":
-  push:
-    branches:
-      - main
-    paths: 
-      - 'blog/**'
-      - 'assets/**'
-      - 'Remote_Access/**'
-      - 'Remote_Support/**'
-      - 'Server_Monitoring/**'
-      - 'Advanced_Security/**'
-      - '.github/workflows/first.yaml'
-      
-
 jobs:
-  post:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set Up Private Key 
-        run: |
-            install -m 600 -D /dev/null ~/.ssh/id_rsa
-            echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_rsa
-      - name: Set Up Users info
-        run: |
-            git config --global user.email "amine.boukhari@tsplus.net"
-            git config --global user.name "amineBoukhari"
-      - name: clone the main repo
-        run: |     
-            git submodule add git@github.com:jwts-dev/tsplus-net.git TSplus_Astro
-      - name: push modifications
-        run: |       
-            cp -r blog/* TSplus_Astro/src/content/blog
-            cp assets/* TSplus_Astro/public/images
-            cp Remote_Access/* TSplus_Astro/src/content/Remote_Access
-            cp Remote_Support/* TSplus_Astro/src/content/Remote_Support
-            cp Server_Monitoring/* TSplus_Astro/src/content/Server_Monitoring
-            cp Advanced_Security/* TSplus_Astro/src/content/Advanced_Security
-            
-            cd TSplus_Astro
-            
-            if [[ -n $(git status -s) ]]; then
-                git add .
-                git commit -m "Update submodule and blog content"
-                git push
-            else
-                echo "No changes to commit."
-            fi
+    - uses: actions/checkout@v3
+    - uses: yunwei37/OpenAI-Continuous-Translator@master
+      with:
+          git_repo_url: https://github.com/amineBoukhari/TSplus-content.git
+          api_key: ${{ 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 }}
+          source_language: 'en' # Replace 'en' with your desired source language code
+          target_language: 'fh' # Replace 'zh' with your desired target language code
+          # Add other inputs as needed
+    - name: Add & Commit
+      uses: EndBug/add-and-commit@v9.1.1
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
