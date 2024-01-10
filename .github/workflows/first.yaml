@@ -15,15 +15,17 @@ jobs:
           node-version: '14' # Use the Node.js version compatible with your project
     - name: Send message to GPT
       run: |
-        ls   
-        curl -X POST \
-        https://api.openai.com/v1/chat/completions \
-        -H "Content-Type: application/json" \
-        -H "Authorization: Bearer ${{ secrets.GPT }}" \
-        -d '{
-             "model": "gpt-3.5-turbo",
-             "messages": [{"role": "user", "content": "translate this to french : "$(cat blogs/2023-cyberthreats-threads-the-advanced-security-response.md)" "}],
-             "temperature": 0.7
-           }'
+          ls
+          FILE_CONTENT=$(cat blogs/2023-cyberthreats-threads-the-advanced-security-response.md | sed 's/"/\\"/g')
+          curl -X POST \
+            https://api.openai.com/v1/chat/completions \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.GPT }}" \
+            -d '{
+                 "model": "gpt-3.5-turbo",
+                 "messages": [{"role": "user", "content": "translate this to French: '"$FILE_CONTENT"'"}],
+                 "temperature": 0.7
+               }'
+
       env:
         OPENAI_KEY: ${{ secrets.GPT }}
