@@ -10,7 +10,7 @@ jobs:
     - uses: yunwei37/OpenAI-Continuous-Translator@master
       with:
           git_repo_url: https://github.com/radi-cho/awesome-gpt4
-          api_key: ${{ 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}}
+          api_key: "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"
     - name: Add & Commit
       uses: EndBug/add-and-commit@v9.1.1
     - name: Create Pull Request
