@@ -1,31 +1,27 @@
-name: Chat with GPT
+name: Run Python Script
 
-on: [push]
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want to trigger the workflow on
 
 jobs:
-  chat:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-          node-version: '14' # Use the Node.js version compatible with your project
-    - name: Send message to GPT
-      run: |
-          ls
-          curl https://api.openai.com/v1/files \
-          -H "Authorization: Bearer ${{ secrets.GPT }}" \
-          -F purpose="fine-tune" \
-          -F file= @blog/2023-cyberthreats-threads-the-advanced-security-response.md
-          -d '{
-            "model": "gpt-3.5-turbo",
-            "messages": [{"role": "user", "content": "translate the given file to french"}],
-            "temperature": 0.7
-          }'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x  # Change to the desired Python version
 
+      - name: Install Python dependencies
+        run: |
+          # You can add any additional pip commands here
 
-      env:
-        OPENAI_KEY: ${{ secrets.GPT }}
+      - name: Run Python script
+        run: |
+          python scrape.py  # Replace with your actual Python script name
