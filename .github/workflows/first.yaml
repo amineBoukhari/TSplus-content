@@ -35,8 +35,7 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.changed_files }}; do 
             python scrape.py $file # Replace with your actual Python script name
-          fi
-            echo "scrapig's done"
+        
           done
 
           
