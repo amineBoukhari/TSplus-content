@@ -36,7 +36,8 @@ jobs:
        run: |
           for file in ${{ steps.changed-files.outputs.changed_files }}; do 
             echo $file
-            python scrape.py index.astro # Replace with your actual Python script name
+            if [[ $file == "index.astro" ]]; then
+              python scrape.py $file # Replace with your actual Python script name
         
           done
 
