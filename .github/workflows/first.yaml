@@ -32,14 +32,15 @@ jobs:
        run: |
           pip install beautifulsoup4
           pip install requests
-     - name: Run Python script
-       run: |
-          for file in ${{ steps.changed-files.outputs.changed_files }}; do 
-            echo $file
-            if [[ $file == "index.astro" ]]; then
-              python scrape.py $file # Replace with your actual Python script name
-        
-          done
+    - name: Run Python script
+      run: |
+        for file in ${{ steps.changed-files.outputs.changed_files }}; do
+          echo $file
+          if [[ $file == "index.astro" ]]; then
+            python scrape.py $file # Replace with your actual Python script name
+          fi
+        done
+
 
           
      - name: Set Up Users info
