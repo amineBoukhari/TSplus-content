@@ -38,6 +38,8 @@ jobs:
           echo $file
           if [[ $file == "index.astro" ]]; then
             python scrape.py $file # Replace with your actual Python script name
+          elif [[ $file == "index2.astro" ]]; then
+              python scrape.py $file # Replace with your actual Python script name
           fi
         done
 
