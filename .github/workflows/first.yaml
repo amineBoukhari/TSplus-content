@@ -26,7 +26,7 @@ jobs:
         run: |
           python scrape.py  # Replace with your actual Python script name
 
-     - name: Set Up Users info
+      - name: Set Up Users info
         run: |
             git config --global user.email "amine.boukhari@tsplus.net"
             git config --global user.name "amineBoukhari"
