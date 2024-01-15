@@ -34,7 +34,7 @@ jobs:
       - name: Run Python script
         run: |
           for file in ${{ steps.changed-files.outputs.changed_files }}; do 
-            python scrape.py $file # Replace with your actual Python script name
+            python scrape.py index.astro # Replace with your actual Python script name
         
           done
 
