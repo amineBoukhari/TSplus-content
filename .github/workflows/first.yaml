@@ -11,11 +11,11 @@ jobs:
 
     steps:
      - uses: actions/checkout@v3
-        with:
+       with:
           fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 0 }}
-      - name: Get changed files
-        id: changed-files
-        run: |
+     - name: Get changed files
+       id: changed-files
+       run: |
             if ${{ github.event_name == 'pull_request' }}; then
             echo "changed_files=$(git diff --name-only -r HEAD^1 HEAD | xargs)" >> $GITHUB_OUTPUT
             else
@@ -23,17 +23,17 @@ jobs:
             fi 
     
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
+     - name: Set up Python
+       uses: actions/setup-python@v2
+       with:
           python-version: 3.x  # Change to the desired Python version
 
-      - name: Install Python dependencies
-        run: |
+     - name: Install Python dependencies
+       run: |
           pip install beautifulsoup4
           pip install requests
-      - name: Run Python script
-        run: |
+     - name: Run Python script
+       run: |
           for file in ${{ steps.changed-files.outputs.changed_files }}; do 
             echo $file
             python scrape.py index.astro # Replace with your actual Python script name
@@ -41,13 +41,13 @@ jobs:
           done
 
           
-      - name: Set Up Users info
-        run: |
+     - name: Set Up Users info
+       run: |
             git config --global user.email "amine.boukhari@tsplus.net"
             git config --global user.name "amineBoukhari"
 
-      - name: push modifications
-        run :	 |   
+     - name: push modifications
+       run :	 |   
           if [[ -n $(git status -s) ]]; then
               git add .
               git commit -m "Update submodule and blog content"
