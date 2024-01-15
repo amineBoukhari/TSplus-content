@@ -1,20 +1,31 @@
-name: Continuous Translation
+name: Chat with GPT
 
-"on":
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
-  build:
+  chat:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
-    - uses: yunwei37/OpenAI-Continuous-Translator@master
+    - uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
       with:
-          git_repo_url: https://github.com/radi-cho/awesome-gpt4
-          api_key: ${{ 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}}
-    - name: Add & Commit
-      uses: EndBug/add-and-commit@v9.1.1
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v4
+          node-version: '14' # Use the Node.js version compatible with your project
+    - name: Send message to GPT
+      run: |
+          ls
+          curl https://api.openai.com/v1/files \
+          -H "Authorization: Bearer ${{ secrets.GPT }}" \
+          -F purpose="fine-tune" \
+          -F file= @blog/2023-cyberthreats-threads-the-advanced-security-response.md
+          -d '{
+            "model": "gpt-3.5-turbo",
+            "messages": [{"role": "user", "content": "translate the given file to french"}],
+            "temperature": 0.7
+          }'
+
+
+      env:
+        OPENAI_KEY: ${{ secrets.GPT }}
