@@ -13,6 +13,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Get changed files
+        id: changed-files
+        run: |
+            if ${{ github.event_name == 'pull_request' }}; then
+            echo "changed_files=$(git diff --name-only -r HEAD^1 HEAD | xargs)" >> $GITHUB_OUTPUT
+            else
+              echo "changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | xargs)" >> $GITHUB_OUTPUT
+            fi 
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -24,8 +33,10 @@ jobs:
           pip install requests
       - name: Run Python script
         run: |
-          python scrape.py  # Replace with your actual Python script name
+          for file in ${{ steps.changed-files.outputs.changed_files }}; do 
+            python scrape.py $file # Replace with your actual Python script name
 
+          
       - name: Set Up Users info
         run: |
             git config --global user.email "amine.boukhari@tsplus.net"
