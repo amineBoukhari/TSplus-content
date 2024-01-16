@@ -1,12 +1,10 @@
 from bs4 import BeautifulSoup
-import requests
 import json
-import os
+import sys
 
 
-# Example usage:
-source_file = 'index.astro'  # Replace with the path to your source file
-destination_file = 'index2.astro'  # Replace with the desired destination path
+if len(sys.argv) > 1:
+    currentFile = sys.argv[1]
 
 
 
@@ -38,7 +36,7 @@ def extract_all_text(currentFile):
 
 
 
-extract_all_text("index.astro")
+extract_all_text(currentFile)
 
 
 
