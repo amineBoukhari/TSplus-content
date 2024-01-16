@@ -3,7 +3,10 @@ name: Run Python Script
 on:
   push:
     branches:
-      - main  # Change this to the branch you want to trigger the workflow on
+      - main  
+    paths : 
+      - "index.astro"
+      - "index2.astro"
 
 jobs:
   build:
