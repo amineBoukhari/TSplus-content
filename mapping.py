@@ -25,15 +25,12 @@ def extract_all_text(currentFile):
         if(element is not None) :
           element.string = f"{{t('{key}')}}"
 
-    des = "./duplicate/{}".format(currentFile)
 
-    with open(des, 'w', encoding='utf-8') as file:
-      file.write(soup.prettify())
-
-        
-
-
-
+    langs = ["fr","ES" ,"AR"]
+    for lang in langs : 
+      des = "{}{}".format(lang,currentFile)
+      with open(des, 'w', encoding='utf-8') as file:
+        file.write(soup.prettify())
 
 
 extract_all_text(currentFile)
