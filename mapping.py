@@ -28,7 +28,7 @@ def extract_all_text(currentFile):
 
     langs = ["fr","ES" ,"AR"]
     for lang in langs : 
-      des = "{}{}".format(lang,currentFile)
+      des = "{}/{}".format(lang,currentFile)
       with open(des, 'w', encoding='utf-8') as file:
         file.write(soup.prettify())
 
