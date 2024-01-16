@@ -1,9 +1,5 @@
 from bs4 import BeautifulSoup
-import requests
-import json
-import os
-import sys
-
+import requests , json , os , sys
 
 # Function to read the current ID from the counter.txt file
 def read_counter(filename):

@@ -5,7 +5,7 @@ on:
     branches:
       - main  
     paths : 
-      - "index.astro"
+      - "src/pages/**"
       - "index2.astro"
 
 jobs:
@@ -39,7 +39,7 @@ jobs:
        run: |
         for file in ${{ steps.changed-files.outputs.changed_files }}; do
           echo $file
-          if [[ $file == "index.astro" ]]; then
+          if [[ $file == "src/pages/"* ]];; then
             python scrape.py $file 
             python mapping.py $file
           elif [[ $file == "index2.astro" ]]; then
