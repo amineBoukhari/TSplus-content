@@ -43,8 +43,8 @@ def extract_all_text(currentFile):
                 extracted_data["p_{}".format(id_counter)] = tag.get_text().strip()
                 tag['data-id'] = "p_{}".format(id_counter)
                 id_counter+= 1 
-            elif json_content[tag['data-id']] != tag.get_text().strip() :
-                json_content[tag['data-id']] = tag.get_text().strip()
+            elif json_content["en"][tag['data-id']]  != tag.get_text().strip() :
+                json_content["en"][tag['data-id']]  = tag.get_text().strip()
                 
                 
         
@@ -53,16 +53,16 @@ def extract_all_text(currentFile):
                 extracted_data["h1_{}".format(id_counter)] = tag.get_text().strip()
                 tag['data-id'] = "h1_{}".format(id_counter)
                 id_counter+= 1 
-            elif json_content[tag['data-id']] != tag.get_text().strip() :
-                json_content[tag['data-id']] = tag.get_text().strip()
+            elif json_content["en"][tag['data-id']] != tag.get_text().strip() :
+                json_content["en"][tag['data-id']]  = tag.get_text().strip()
 
         for tag in soup.find_all('h2') :
             if not tag.has_attr('data-id') :
                 extracted_data["h2_{}".format(id_counter)] = tag.get_text().strip()
                 tag['data-id'] = "h2_{}".format(id_counter)
                 id_counter+= 1 
-            elif json_content[tag['data-id']] != tag.get_text().strip() :
-                json_content[tag['data-id']] = tag.get_text().strip()
+            elif json_content["en"][tag['data-id']]  != tag.get_text().strip() :
+                json_content["en"][tag['data-id']]  = tag.get_text().strip()
 
 
         for tag in soup.find_all('h3') :
@@ -70,8 +70,8 @@ def extract_all_text(currentFile):
                 extracted_data["h3_{}".format(id_counter)] = tag.get_text().strip()
                 tag['data-id'] = "h3_{}".format(id_counter)
                 id_counter+= 1 
-            elif json_content[tag['data-id']] != tag.get_text().strip() :
-                json_content[tag['data-id']] = tag.get_text().strip()
+            elif json_content["en"][tag['data-id']] != tag.get_text().strip() :
+               json_content["en"][tag['data-id']]  = tag.get_text().strip()
 
 
         for tag in soup.find_all('span') :
@@ -79,8 +79,8 @@ def extract_all_text(currentFile):
                 extracted_data["span_{}".format(id_counter)] = tag.get_text().strip()
                 tag['data-id'] = "span_{}".format(id_counter)
                 id_counter+= 1 
-            elif json_content[tag['data-id']] != tag.get_text().strip() :
-                json_content[tag['data-id']] = tag.get_text().strip()
+            elif json_content["en"][tag['data-id']] != tag.get_text().strip() :
+               json_content["en"][tag['data-id']] = tag.get_text().strip()
 
             
         #update counter 
@@ -90,11 +90,14 @@ def extract_all_text(currentFile):
     with open(currentFile, 'w', encoding='utf-8') as file:
         file.write(str(soup))
 
-    mergedJSON = {**json_content,**extracted_data}
 
 
+    mergedJSON = {**json_content["en"],**extracted_data}
+    json_content["en"] = mergedJSON
+
+    
     with open("extracted_text.json", "w") as file:
-        file.write(json.dumps(mergedJSON,indent=4)) 
+        file.write(json.dumps(json_content,indent=4)) 
         
 
 

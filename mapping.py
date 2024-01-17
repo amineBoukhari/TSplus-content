@@ -19,6 +19,7 @@ def extract_all_text(currentFile):
         soup = BeautifulSoup(html_content, 'html.parser')
         #json_content : content of the translation JSON filee => JSON FORMAT 
         json_content =json.load(json_file)
+        json_content = json_content["en"]
 
     for key in json_content : 
         element =  soup.find( attrs={'data-id': key})
